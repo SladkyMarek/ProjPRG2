@@ -28,19 +28,12 @@ header {
     color: white;
     transition: 0.5s;
     align-items: center;
+    cursor: pointer;
+    background: none;
+    border-radius: 10px;
 }
 
 .headerButton:hover {
-    background-color: white;
-    color: black;
-}
-
-.headerButton i {
-    color: white;
-    transition: 0.5s;
-}
-
-.headerButton i:hover {
     background-color: white;
     color: black;
 }
@@ -67,7 +60,7 @@ header {
     background-color: #00000023;
     margin: 5px;
     padding: 5px;
-    border: 1px black solid;
+    border: 2px black solid;
     border-radius: 10px;
 }
 
@@ -75,10 +68,16 @@ header {
     background: none;
     border: none;
     color: white;
+    outline: none;
 }
 
 .search input::placeholder {
-    color: white;
+    color: #c0c0c0;
+}
+
+.search input:active {
+    border: none;
+    outline: none;
 }
 
 .search i {
@@ -110,8 +109,60 @@ header {
     width: 9 0%;
     padding: 10px;
     background-color: #1495ff;
-
+    border-radius: 50px;
+    cursor: pointer;
+    
 }
+
+/*  Num of players start    */
+
+.sliderText {
+    background-color: white;
+    width: 100%;
+    font-size: large;
+    font-weight: 700;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor:default;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 20px;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+}
+
+.slider:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #008cff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+/*  Num of players end    */
 
 /*  Left part end    */
 
@@ -149,7 +200,7 @@ header {
     border: 1px black solid;
 }
 
-.boardGame a {
+.boardGame .rent {
     border: 1px black solid;
     border-radius: 5px;
     padding: 5px 10px;
@@ -157,9 +208,10 @@ header {
     background-color: #47acff;
     color: white;
     transition: 0.5s;
+    cursor: pointer;
 }
 
-.boardGame a:hover {
+.boardGame .rent:hover {
     background-color: #008cff;
 }
 

@@ -1,0 +1,177 @@
+.divPlaceholder {
+    border: 2px black dashed;
+    outline: 2px white dashed;
+}
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: large;
+}
+
+/*  Header Start    */
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: #1495ff;
+    padding: 10px;
+    align-items: center;
+}
+
+.headerButton {
+    display: flex;
+    border: 2px black solid;
+    padding: 10px;
+    color: white;
+    transition: 0.5s;
+    align-items: center;
+}
+
+.headerButton:hover {
+    background-color: white;
+    color: black;
+}
+
+.headerButton i {
+    color: white;
+    transition: 0.5s;
+}
+
+.headerButton i:hover {
+    background-color: white;
+    color: black;
+}
+
+.header1 {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #00000023;
+    margin: 5px;
+    padding: 5px;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
+.search input {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.search input::placeholder {
+    color: white;
+}
+
+.search i {
+    color: white;
+}
+
+/*  Header End    */
+
+/*  Main Start    */
+
+.main {
+    display: flex;
+    flex-direction: row;
+    min-height: 10rem;
+}
+
+.mainDiv {
+    padding: 3rem;
+}
+
+/*  Left part start    */
+
+.mainDiv1 {
+    width: 17rem;
+    background-color: #0f558f;
+}
+
+.lNav {
+    width: 9 0%;
+    padding: 10px;
+    background-color: #1495ff;
+
+}
+
+/*  Left part end    */
+
+/*  Right part start    */
+
+.mainDiv2 {
+    width: calc(100vw - 19rem);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/*  Board Games Start    */
+
+.boardGameBlockRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 4rem;
+}
+
+.boardGame {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #00000028;
+}
+
+.boardGame img {
+    width: 10rem;
+    height: 9rem;
+    object-fit: cover;
+    overflow: hidden;
+    border: 1px black solid;
+}
+
+.boardGame a {
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #47acff;
+    color: white;
+    transition: 0.5s;
+}
+
+.boardGame a:hover {
+    background-color: #008cff;
+}
+
+/*  Board Games End*/
+/*  Right part End    */
+/*  Main End    */
+
+/*  Footer Start    */
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+/*  Footer End    */

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=rbBrFrvKao0F&format=png&color=000000" type="image/x-icon">
+    <title>Rent a Game</title>
+</head>
+<body>
+    <header>
+        <div class="header1">
+            <i class="material-icons headerButton">menu</i></button>
+        </div>
+        <div class="header1">
+            <div class="search">
+                &nbsp;&nbsp;&nbsp;
+                <input type="text" placeholder="Search">
+                <i class="material-icons">search</i>
+            </div>
+            <div class="header2">
+                <button class="headerButton">Sign in</button>
+                <button class="headerButton">hello</button>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="mainDiv mainDiv1">
+            <div class="lNav">
+                <i class="material-icons">menu</i>
+            </div>
+            <br>
+            <div>
+                <p class="sliderText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min počet hráčů: 1</p>
+                <input type="range" id="minNumOfPlayers" min="1" max="20" value="1" class="slider">
+                <p class="sliderText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max počet hráčů: 20</p>
+                <input type="range" id="maxNumOfPlayers" min="1" max="20" value="20" class="slider">
+            </div>
+        </div>
+        <div class="mainDiv mainDiv2">
+            <?php 
+
+            $items = 50000;
+
+            for($i = 0; $i < $items; $i++){
+                echo '<div class="boardGameBlockRow">';
+                for($j = 0; $j < 4; $j++){
+                    echo '<div class="divPlaceholder boardGame">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg" alt="boardGame">
+                    <P>[NAME]</P>
+                    <p>[DESCRIPTION]</p>
+                    <p>[PRICE]</p>
+                    <button class="rent">PŮJČIT</button>
+                </div>';
+                }
+                echo '</div>';
+            }
+            ?>
+            
+        </div>
+    </div>
+    <footer>
+        footer<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex debitis fugiat eius qui doloremque aspernatur officiis assumenda tempora, sunt tenetur accusamus, repellendus magnam libero, ullam ab minima sit exercitationem illum!
+    </footer>
+</body>
+</html>

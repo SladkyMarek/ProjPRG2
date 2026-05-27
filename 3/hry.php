@@ -5,10 +5,11 @@ vyzaduiPrihlaseni();
 if (isset($_POST['pridat'])) {
     $nazev = $_POST['nazev'];
     $autor = $_POST['autor'];
+    $rok_vydani = $_POST['rok_vydani'];
     $stav = 'dostupná';
     
-    $dotaz = $pdo->prepare("INSERT INTO hry (nazev, autor, stav) VALUES (?, ?, ?)");
-    $dotaz->execute([$nazev, $autor, $stav]);
+    $dotaz = $pdo->prepare("INSERT INTO hry (nazev, autor, rokvydani, stav) VALUES (?, ?, ?, ?)");
+    $dotaz->execute([$nazev, $autor, $rok_vydani, $stav]);
 }
 
 if (isset($_GET['smazat'])) {
@@ -48,6 +49,7 @@ $taken = $pdo->query("SELECT * FROM hry WHERE stav = 'vypůjčená'")->fetchAll(
                 <form method="POST">
                     <div class="formDiv">Název hry: <input type="text" name="nazev" class="form"></div>
                     <div class="formDiv">Autor: <input type="text" name="autor" class="form"></div>
+                    <div class="formDiv">Rok Vydání: <input type="text" name="rok_vydani" class="form"></div>
                     <div class="formDiv submitDiv"><input type="submit" name="pridat" value="Přidat hru" class="form submit"></div>
                 </form>
             </div>
@@ -67,7 +69,7 @@ $taken = $pdo->query("SELECT * FROM hry WHERE stav = 'vypůjčená'")->fetchAll(
                             <td><?php echo $f['id']?></td>
                             <td><?php echo $f['nazev']?></td>
                             <td><?php echo $f['autor']?></td>
-                            <td><?php echo $f['rok vydani']?></td>
+                            <td><?php echo $f['rokvydani']?></td>
                             <td class="delete"><a href="hry.php?smazat=<?php echo $f['id']; ?>">Smazat</a></td>
                         </tr>
                         <?php } ?>
@@ -88,7 +90,7 @@ $taken = $pdo->query("SELECT * FROM hry WHERE stav = 'vypůjčená'")->fetchAll(
                             <td><?php echo $t['id']?></td>
                             <td><?php echo $t['nazev']?></td>
                             <td><?php echo $t['autor']?></td>
-                            <td><?php echo $t['rok vydani']?></td>
+                            <td><?php echo $t['rokvydani']?></td>
                             <td class="delete"><a href="hry.php?smazat=<?php echo $t['id']; ?>">Smazat</a></td>
                         </tr>
                         <?php } ?>
@@ -109,7 +111,7 @@ $taken = $pdo->query("SELECT * FROM hry WHERE stav = 'vypůjčená'")->fetchAll(
                             <td><?php echo $n['id']?></td>
                             <td><?php echo $n['nazev']?></td>
                             <td><?php echo $n['autor']?></td>
-                            <td><?php echo $n['rok vydani']?></td>
+                            <td><?php echo $n['rokvydani']?></td>
                             <td class="delete"><a href="hry.php?smazat=<?php echo $n['id']; ?>">Smazat</a></td>
                         </tr>
                         <?php } ?>

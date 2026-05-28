@@ -13,16 +13,17 @@ Aplikace řeší běžné problémy kamenných půjčen, jako je nepřehledné v
 * **Řízení přístupu:** Striktní ochrana dat – do systému má přístup výhradně uživatel s rolí `admin`.
 
 ## 3. Struktura projektu a souborů
-Projekt je organizován modulárně do následujících souborů:
-
-* **`config.php`** – Inicializace relace (`session_start`), globální připojení k databázi přes PDO a bezpečnostní funkce pro ověření přihlášení (`vyzaduiPrihlaseni()`).
-* **`index.php`** – Vstupní bod, který uživatele automaticky přesměruje na přihlašovací stránku.
-* **`login.php` / `logout.php`** – Zpracování přihlášení administrátora, kontrola role v databázi, ošetření chybových stavů a bezpečné ukončení relace.
-* **`dashboard.php`** – Hlavní rozcestník po přihlášení. Zobrazuje sumarizační tabulky s přehledem aktivních výpůjček, dostupných zákazníků a aktuálního stavu her.
-* **`hry.php`** – Správa herního inventáře. Obsahuje formulář pro přidání nové hry a rozřazuje stávající hry do tří přehledných sloupců podle stavu. Implementuje logické mazání (`smazat = 1`).
-* **`uzivatele.php`** – Správa uživatelských účtů. Umožňuje registraci nových uživatelů a jejich kategorizaci (Administrátoři, Zákazníci, Vyřazení).
-* **`vypujcky.php`** – Transakční jádro systému. Zajišťuje vytvoření nové výpůjčky (přepne hru na `vypůjčená`) a evidenci vrácení (přepne hru zpět na `dostupná` a zapíše datum vrácení).
-* **`style.css`** – Centralizovaný stylopis. Definuje rozvržení s fixním bočním menu (`.sidebar`) a vizuální styl informačních karet (`.infoElement`).
+/pujcovna_her/
+  ├── index.php          – vstupní bod (automatické přesměrování na login)
+  ├── login.php          – přihlašovací formulář pro administrátora a ověření práv
+  ├── logout.php         – bezpečné odhlášení a ukončení aktivní relace
+  ├── dashboard.php      – hlavní přehledový panel (rozcestník s rychlými přehledy)
+  ├── hry.php            – správa herního inventáře (přidání, výpis, soft-delete)
+  ├── uzivatele.php      – správa uživatelských účtů (registrace, rozřazení do rolí)
+  ├── vypujcky.php       – transakční jádro (vytvoření výpůjčky, evidence vrácení)
+  ├── config.php         – připojení k databázi přes PDO a kontrola zabezpečení relací
+  ├── style.css          – centralizovaný stylopis pro vzhled celého systému
+  └── pujcovna_her.sql   – SQL dump databáze včetně struktury a ukázkových dat
 
 ## 4. Popis funkcionalit
 * **Autorizace:** Každý podsystém kontroluje platnost relace. Nepřihlášený uživatel je okamžitě přesměrován na login.
